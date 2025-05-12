@@ -1,0 +1,139 @@
+.filials {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+
+  h2,
+  h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  // ✅ REGION LIST
+  .region-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Desktop 3 ta
+    gap: 1rem;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 2rem;
+
+    .region-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f9f9f9;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      padding: 0.8rem 1rem;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease-in-out;
+      font-size: 0.95rem;
+
+      svg {
+        margin-right: 6px;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        background-color: #e6f7ff;
+      }
+
+      &.active {
+        border-color: #4caf50;
+        background-color: #d0f0d0;
+        font-weight: bold;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  // ✅ FILIALS LIST
+  .flials-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Desktop 3 ta
+    gap: 1rem;
+    width: 100%;
+    max-width: 1000px;
+
+    .flial-card {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      h4 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+        color: #333;
+        font-size: 1rem;
+
+        svg {
+          margin-right: 6px;
+        }
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: #666;
+        word-break: break-word;
+
+        a {
+          display: inline-flex;
+          align-items: center;
+          margin: 0 4px;
+          text-decoration: none;
+          color: inherit;
+          transition: color 0.2s ease;
+
+          svg {
+            margin-right: 4px;
+          }
+
+          &:hover {
+            color: #4caf50;
+          }
+        }
+      }
+    }
+  }
+
+  // ✅ RESPONSIVE BREAKPOINTS
+  @media (max-width: 900px) {
+    .region-list {
+      grid-template-columns: repeat(2, 1fr); // Tablet 2 ta
+    }
+
+    .flials-list {
+      grid-template-columns: repeat(2, 1fr); // Tablet 2 ta
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 1rem;
+
+    .region-list {
+      grid-template-columns: repeat(1, 1fr); // Mobile 1 ta
+    }
+
+    .flials-list {
+      grid-template-columns: repeat(1, 1fr); // Mobile 1 ta
+    }
+  }
+}
