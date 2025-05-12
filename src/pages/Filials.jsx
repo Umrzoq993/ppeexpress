@@ -14,7 +14,9 @@ export default function Filials() {
 
   const getRegions = async () => {
     try {
-      const response = await axios.get("http://localhost:8001/regions/");
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/regions/`
+      );
       setRegions(response.data);
     } catch (error) {
       console.error("Regionlarni olishda xato:", error);
@@ -27,7 +29,7 @@ export default function Filials() {
     setLoadingFlials(true);
     try {
       const response = await axios.get(`
-        http://localhost:8001/flials/?region_id=${regionId}`);
+        ${process.env.REACT_APP_API_URL}/flials/?region_id=${regionId}`);
       setFlials(response.data);
       setSelectedRegionId(regionId);
       setSelectedRegionName(regionName);

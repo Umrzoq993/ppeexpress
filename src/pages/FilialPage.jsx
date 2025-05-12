@@ -12,7 +12,7 @@ export default function FilialPage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8001/flial/?flial_id=${flial_id}")
+      .get(`${process.env.REACT_APP_API_URL}/flial/?flial_id=${flial_id}`)
       .then((res) => setFlial(res.data))
       .catch(() => setFlial(null))
       .finally(() => setLoading(false));
